@@ -23,7 +23,6 @@ recipes:
 # development (rails)
 - sprout-rbenv
 - sprout-ruby
-- sprout-mysql
 - sprout-postgresql
 
 # apps
@@ -32,9 +31,8 @@ recipes:
 - sprout-osx-apps::shiftit
 
 # apps (editors)
-- sprout-osx-apps::textmate_bundles
-- sprout-osx-apps::textmate_preferences
 - sprout-osx-apps::macvim
+- sprout-osx-apps::sublime_text
 - sprout-rubymine
 
 node_attributes:
@@ -75,7 +73,6 @@ node_attributes:
         - imagemagick
         - node
         - pstree
-        - qt
         - ssh-copy-id
         - tmux
         - tree
@@ -83,6 +80,8 @@ node_attributes:
         - wget
         - rbenv-binstubs
         - rbenv-gem-rehash
+        - 'homebrew/versions/elasticsearch090'
+        - phantomjs
       casks:
         - ccmenu
         - firefox
@@ -91,9 +90,7 @@ node_attributes:
         - google-chrome
         - google-drive
         - google-hangouts
+        - hipchat
         - skype
-        - textmate
-        - vagrant
-        - virtualbox
         - xquartz
         - xscope
