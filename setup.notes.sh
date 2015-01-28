@@ -1,14 +1,28 @@
 # This is not meant to be run as a script - currently just a placeholder for all
 # manual steps that need to be taken to setup a new mac. (currently incomplete)
 
-#install java 1.7 jre and jdk from web
-#http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
-#http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html
+cd workspace/
+mv sprout-wrap pl-sprout-wrap
+ssh-keygen -t rsa -C "pivotal-mansell@realscout.com"
+mv ~/.ssh/id_rsa ~/.ssh/sprout-wrap-id
+mv ~/.ssh/id_rsa.pub ~/.ssh/sprout-wrap-id.pub
+cat ~/.ssh/sprout-wrap-id.pub  # and add as RealScout/sprout-wrap deploy key
+git clone git@github.com:RealScout/sprout-wrap.git
+ssh-keygen -t rsa -C "pivotal-mansell@realscout.com"
+cat ~/.ssh/id_rsa.pub # and add as RealScout/RealScoutV2 deploy key
+git clone git@github.com:RealScout/RealScoutV2.git
+
+# http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+# http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html
 
 #install homebrew
 brew tap homebrew/versions
 
+# Upgrade Xcode? bundle exec soloist will fail on nokogiri below without it
+
 cd sprout-wrap
+rbenv local 1.9.3-p448
+gem install bundler
 bundle && bundle exec soloist
 
 cd RealScoutV2
