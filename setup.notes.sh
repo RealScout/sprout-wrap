@@ -67,10 +67,7 @@ gem install bundler
 rbenv rehash
 bundle
 
-psql -c "create user rails with superuser login password 'password';"
 psql -c "create user realscout with superuser login password '123foo';"
-psql -c "CREATE DATABASE rsv2_mls OWNER realscout;"
-
 cp config/database.sample.yml config/database.yml
 
 rake db:create
