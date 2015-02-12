@@ -29,6 +29,7 @@ rbenv rehash
 
 
 # Clone sprout wrap and run it
+mkdir ~/workspace
 cd ~/workspace
 git clone https://github.com/RealScout/sprout-wrap.git
 cd sprout-wrap/
