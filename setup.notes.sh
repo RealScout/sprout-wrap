@@ -23,6 +23,8 @@ brew install libxml2 libxslt
 xcode-select --install
 
 brew install rbenv ruby-build
+echo 'eval "$(rbenv init -)"' > ~/.bash_profile
+source ~/.bash_profile
 rbenv install 2.0.0-p598 # for RealScoutV2
 rbenv install 1.9.3-p551 # for sprout wrap
 rbenv rehash
@@ -39,7 +41,8 @@ rbenv rehash
 bundle
 bundle exec soloist
 
-
+echo 'eval "$(rbenv init -)"' > ~/.bash_profile
+source ~/.bash_profile
 
 # start up elasticsearch
 ln -sfv /usr/local/opt/elasticsearch090/*.plist ~/Library/LaunchAgents
