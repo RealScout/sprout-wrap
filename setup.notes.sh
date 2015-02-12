@@ -45,8 +45,13 @@ bundle exec soloist
 ln -sfv /usr/local/opt/elasticsearch090/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch090.plist
 
+# Edit redis brew recipe to use 2.6
+brew edit redis
+# url "http://download.redis.io/releases/redis-2.6.17.tar.gz"
+# sha1 "b5423e1c423d502074cbd0b21bd4e820409d2003"
+brew install redis
+
 # start up redis
-# note, make sure sprout-wrap has redis in it (preferably 2.6, not 2.8)
 ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
 
