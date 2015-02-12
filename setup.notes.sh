@@ -1,33 +1,39 @@
 # This is not meant to be run as a script - currently just a placeholder for all
 # manual steps that need to be taken to setup a new mac. (currently incomplete)
 
-cd workspace/
-mv sprout-wrap pl-sprout-wrap
-ssh-keygen -t rsa -C "pivotal-mansell@realscout.com"
-mv ~/.ssh/id_rsa ~/.ssh/sprout-wrap-id
-mv ~/.ssh/id_rsa.pub ~/.ssh/sprout-wrap-id.pub
-cat ~/.ssh/sprout-wrap-id.pub  # and add as RealScout/sprout-wrap deploy key
-git clone git@github.com:RealScout/sprout-wrap.git
-ssh-keygen -t rsa -C "pivotal-mansell@realscout.com"
-cat ~/.ssh/id_rsa.pub # and add as RealScout/RealScoutV2 deploy key
-git clone git@github.com:RealScout/RealScoutV2.git
-
+# Install XCode
 # http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
 # http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html
 
-#install homebrew
+# Install homebrew - http://brew.sh
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/versions
+brew doctor
 
-# Upgrade Xcode? bundle exec soloist will fail on nokogiri below without it
+# Install things for nokogiri
+brew install libxml2 libxslt
+xcode-select --install
 
-cd sprout-wrap
-rbenv local 1.9.3-p448
+rbenv install 2.0.0-p598 # for RealScoutV2
+rbenv install 1.9.3-p551 # for sprout wrap
+rbenv rehash
+
+
+# Clone sprout wrap and run it
+cd ~/workspace
+git clone https://github.com/RealScout/sprout-wrap.git
+cd sprout-wrap/
+rbenv local 1.9.3-p551
 gem install bundler
-bundle && bundle exec soloist
+rbenv rehash
+bundle
+bundle exec soloist
 
-cd RealScoutV2
-rbenv install 1.9.3-p392
-rbenv global 1.9.3-p392
+# Clone RealScoutV2
+cd ~/workspace
+git clone git@github.com:RealScout/RealScoutV2.git
+cd RealScoutV2/
+rbenv local 2.0.0-p598
 gem install bundler
 rbenv rehash
 bundle
