@@ -78,4 +78,9 @@ rake elastic_search:index_agents
 rake elastic_search:omniresults
 rake test:prepare
 
+brew edit phantomjs
+# replace entire contents of recips with https://github.com/Homebrew/homebrew/blob/1a69283250d53c01fe018fa816cb523363de192b/Library/Formula/phantomjs.r
+brew uninstall phantomjs
+brew install phantomjs
+
 rspec spec
