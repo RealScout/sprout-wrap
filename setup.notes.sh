@@ -21,6 +21,7 @@ brew doctor
 brew install libxml2 libxslt
 xcode-select --install
 
+brew install rbenv
 rbenv install 2.0.0-p598 # for RealScoutV2
 rbenv install 1.9.3-p551 # for sprout wrap
 rbenv rehash
