@@ -79,7 +79,7 @@ rake elastic_search:omniresults
 rake test:prepare
 
 brew edit phantomjs
-# replace entire contents of recips with https://github.com/Homebrew/homebrew/blob/1a69283250d53c01fe018fa816cb523363de192b/Library/Formula/phantomjs.r
+# replace entire contents of recips with https://github.com/Homebrew/homebrew/blob/1a69283250d53c01fe018fa816cb523363de192b/Library/Formula/phantomjs.rb
 brew uninstall phantomjs
 brew install phantomjs
 
