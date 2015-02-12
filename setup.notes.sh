@@ -38,14 +38,7 @@ rbenv rehash
 bundle
 bundle exec soloist
 
-# Clone RealScoutV2
-cd ~/workspace
-git clone git@github.com:RealScout/RealScoutV2.git
-cd RealScoutV2/
-rbenv local 2.0.0-p598
-gem install bundler
-rbenv rehash
-bundle
+
 
 # start up elasticsearch
 ln -sfv /usr/local/opt/elasticsearch090/*.plist ~/Library/LaunchAgents
@@ -55,6 +48,15 @@ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch090.plist
 # note, make sure sprout-wrap has redis in it (preferably 2.6, not 2.8)
 ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+
+# Clone RealScoutV2
+cd ~/workspace
+git clone git@github.com:RealScout/RealScoutV2.git
+cd RealScoutV2/
+rbenv local 2.0.0-p598
+gem install bundler
+rbenv rehash
+bundle
 
 psql -c "create user rails with superuser login password 'password';"
 psql -c "create user realscout with superuser login password '123foo';"
