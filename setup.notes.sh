@@ -2,8 +2,15 @@
 # manual steps that need to be taken to setup a new mac. (currently incomplete)
 
 # Install XCode
+
+# Install Java sdk and jre
 # http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
 # http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html
+
+# Add an ssh deploy key for the workstation
+ssh-keygen -t rsa -C "rs-winterfell@realscout.com"
+ssh-add ~/.ssh/RealScoutV2_id_rsa
+cat ~/.ssh/RealScoutV2_id_rsa.pub
 
 # Install homebrew - http://brew.sh
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
