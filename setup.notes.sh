@@ -8,9 +8,10 @@
 # http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html
 
 # Add an ssh deploy key for the workstation
-ssh-keygen -t rsa -C "rs-winterfell@realscout.com"
+ssh-keygen -t rsa -C "rs-XXXX@realscout.com"
 ssh-add ~/.ssh/RealScoutV2_id_rsa
 cat ~/.ssh/RealScoutV2_id_rsa.pub
+# Copy this into the RealScout Repo Settings on github as RS-XXXX Workstation
 
 # Install homebrew - http://brew.sh
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
