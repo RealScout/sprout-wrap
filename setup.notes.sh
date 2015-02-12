@@ -71,7 +71,7 @@ psql -c "create user rails with superuser login password 'password';"
 psql -c "create user realscout with superuser login password '123foo';"
 psql -c "CREATE DATABASE rsv2_mls OWNER realscout;"
 
-# edit config/database.yml
+cp config/database.sample.yml config/database.yml
 
 rake db:create
 rake db:migrate
