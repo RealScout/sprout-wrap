@@ -44,15 +44,28 @@ bundle exec soloist
 echo 'eval "$(rbenv init -)"' > ~/.bash_profile
 source ~/.bash_profile
 
-# start up elasticsearch
-ln -sfv /usr/local/opt/elasticsearch090/*.plist ~/Library/LaunchAgents
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch090.plist
-
 # Edit redis brew recipe to use 2.6
 brew edit redis
 # url "http://download.redis.io/releases/redis-2.6.17.tar.gz"
 # sha1 "b5423e1c423d502074cbd0b21bd4e820409d2003"
 brew install redis
+
+brew edit phantomjs
+# replace entire contents of recips with https://github.com/Homebrew/homebrew/blob/1a69283250d53c01fe018fa816cb523363de192b/Library/Formula/phantomjs.rb
+brew uninstall phantomjs
+brew install phantomjs
+
+brew edit node
+#url "https://nodejs.org/dist/v0.10.36/node-v0.10.36.tar.gz"
+#sha256 "b9d7d1d0294bce46686b13a05da6fc5b1e7743b597544aa888e8e64a9f178c81"
+brew uninstall node
+brew install node
+
+npm install -g bower gulp
+
+# start up elasticsearch
+ln -sfv /usr/local/opt/elasticsearch090/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch090.plist
 
 # start up redis
 ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
@@ -77,18 +90,5 @@ rake db:seed
 rake elastic_search:index_agents
 rake elastic_search:omniresults
 rake test:prepare
-
-brew edit phantomjs
-# replace entire contents of recips with https://github.com/Homebrew/homebrew/blob/1a69283250d53c01fe018fa816cb523363de192b/Library/Formula/phantomjs.rb
-brew uninstall phantomjs
-brew install phantomjs
-
-brew edit node
-#url "https://nodejs.org/dist/v0.10.36/node-v0.10.36.tar.gz"
-#sha256 "b9d7d1d0294bce46686b13a05da6fc5b1e7743b597544aa888e8e64a9f178c81"
-brew uninstall node
-brew install node
-
-npm install -g bower gulp
 
 ./script/omnispec.sh
