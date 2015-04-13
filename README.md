@@ -3,7 +3,7 @@
 #### Setup required before running soloist
 
 ``` bash
-# Install XCode
+# Install XCode via apple app store
 
 # Install Java sdk and jre
 # http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
