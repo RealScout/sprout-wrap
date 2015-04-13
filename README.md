@@ -1,61 +1,99 @@
-# sprout-wrap
+### New Mac Setup
 
-[![Build Status](https://travis-ci.org/pivotal-sprout/sprout-wrap.png?branch=master)](https://travis-ci.org/pivotal-sprout/sprout-wrap)
+#### Install XCode 
 
-This project uses [soloist](https://github.com/mkocher/soloist) and [librarian-chef](https://github.com/applicationsonline/librarian-chef)
-to run a subset of the recipes in sprout's cookbooks.
+Install XCode via apple app store
 
-[Fork it](https://github.com/pivotal-sprout/sprout-wrap/fork) to 
-customize its [attributes](http://docs.opscode.com/chef_overview_attributes.html) in [soloistrc](/soloistrc) and the list of recipes 
-you'd like to use for your team. You may also want to add other cookbooks to its [Cheffile](/Cheffile), perhaps one 
-of the many [community cookbooks](http://community.opscode.com/cookbooks). By default it configures an OS X 
-Mavericks workstation for Ruby development.
+#### Install Java sdk and jre
 
-Finally, if you've never used Chef before - we highly recommend you buy &amp; watch [this excellent 17 minute screencast](http://railscasts.com/episodes/339-chef-solo-basics) by Ryan Bates. 
+http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html
 
-## Installation under Mavericks (OS X 10.9)
+``` bash
+# Add an ssh deploy key for the workstation
+ssh-keygen -t rsa -C "rs-XXXX@realscout.com"
+ssh-add ~/.ssh/RealScoutV2_id_rsa
+cat ~/.ssh/RealScoutV2_id_rsa.pub
+# Copy this into the RealScout Repo Settings on github as RS-XXXX Workstation
 
-### 1. Install Command Line Tools
-  
-    xcode-select --install
+# Install homebrew - http://brew.sh
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap homebrew/versions
+brew doctor
 
-If you receive a message about the update server being unavailable and are on Mavericks, then you already have the command line tools.
+# Install things for nokogiri
+brew install libxml2 libxslt
+xcode-select --install
 
-### 2. Clone this project
+brew install rbenv ruby-build
+echo 'eval "$(rbenv init -)"' > ~/.bash_profile
+source ~/.bash_profile
+rbenv install 2.0.0-p598 # for RealScoutV2
+rbenv install 1.9.3-p551 # for sprout wrap
+rbenv rehash
 
-    git clone https://github.com/pivotal-sprout/sprout-wrap.git
-    cd sprout-wrap
 
-### 3. Install soloist & and other required gems
+# Clone sprout wrap and run it
+mkdir ~/workspace
+cd ~/workspace
+git clone https://github.com/RealScout/sprout-wrap.git
+cd sprout-wrap/
+rbenv local 1.9.3-p551
+gem install bundler
+rbenv rehash
+bundle
+bundle exec soloist
 
-If you're running under rvm or rbenv, you shouldn't preface the following commands with `sudo`.
+echo 'eval "$(rbenv init -)"' > ~/.bash_profile
+source ~/.bash_profile
 
-    sudo gem install bundler
-    sudo bundle
+# Edit redis brew recipe to use 2.6
+brew edit redis
+# url "http://download.redis.io/releases/redis-2.6.17.tar.gz"
+# sha1 "b5423e1c423d502074cbd0b21bd4e820409d2003"
+brew install redis
 
-If you receive errors like this:
+brew edit phantomjs
+# replace entire contents of recipe with the contents of this url
+# https://github.com/Homebrew/homebrew/blob/1a69283250d53c01fe018fa816cb523363de192b/Library/Formula/phantomjs.rb
+brew uninstall phantomjs
+brew install phantomjs
 
-    clang: error: unknown argument: '-multiply_definedsuppress'
+brew edit node
+#url "https://nodejs.org/dist/v0.10.36/node-v0.10.36.tar.gz"
+#sha256 "b9d7d1d0294bce46686b13a05da6fc5b1e7743b597544aa888e8e64a9f178c81"
+brew uninstall node
+brew install node
 
-then try downgrading those errors like this:
+npm install -g bower gulp
 
-    sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future bundle
+# start up elasticsearch
+ln -sfv /usr/local/opt/elasticsearch090/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch090.plist
 
-### 4. Run soloist
+# start up redis
+ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
 
-[You may want to modify your Energy Saver preferences (**System Preferences &rarr; Energy Saver &rarr; Computer Sleep &rarr; 3hrs**); depending on your network connection, soloist can take from 10 minutes to 2 hours to complete.]
+# Clone RealScoutV2
+cd ~/workspace
+git clone git@github.com:RealScout/RealScoutV2.git
+cd RealScoutV2/
+rbenv local 2.0.0-p598
+gem install bundler
+rbenv rehash
+bundle
 
-    bundle exec soloist
+psql -c "create user realscout with superuser login password '123foo';"
+cp config/database.sample.yml config/database.yml
 
-## Roadmap
+rake db:create
+rake db:migrate
+rake populate:import_rs_att_mappings
+rake db:seed
+rake elastic_search:index_agents
+rake elastic_search:omniresults
+rake test:prepare
 
-See Pivotal Tracker: https://www.pivotaltracker.com/s/projects/884116
-
-## Discussion List
-
-  Join [sprout-users@googlegroups.com](https://groups.google.com/forum/#!forum/sprout-users) if you use Sprout.
-
-## References
-
-* Slides from @hiremaga's [lightning talk on Sprout](http://sprout-talk.cfapps.io/) at Pivotal Labs in June 2013
-* [Railscast on chef-solo](http://railscasts.com/episodes/339-chef-solo-basics) by Ryan Bates (PAID)
+./script/omnispec.sh
+```
