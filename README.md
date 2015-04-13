@@ -31,8 +31,11 @@ source ~/.bash_profile
 rbenv install 2.0.0-p598 # for RealScoutV2
 rbenv install 1.9.3-p551 # for sprout wrap
 rbenv rehash
+```
 
+#### Install this repo and run soloist
 
+``` bash
 # Clone sprout wrap and run it
 mkdir ~/workspace
 cd ~/workspace
@@ -44,9 +47,17 @@ rbenv rehash
 bundle
 bundle exec soloist
 
+
+#### Setup rbenv
+
+``` bash
 echo 'eval "$(rbenv init -)"' > ~/.bash_profile
 source ~/.bash_profile
+```
 
+#### Install brew recipes with edits
+
+``` bash
 # Edit redis brew recipe to use 2.6
 brew edit redis
 # url "http://download.redis.io/releases/redis-2.6.17.tar.gz"
@@ -64,8 +75,17 @@ brew edit node
 #sha256 "b9d7d1d0294bce46686b13a05da6fc5b1e7743b597544aa888e8e64a9f178c81"
 brew uninstall node
 brew install node
+```
 
+#### Install bower & gulp
+
+``` bash
 npm install -g bower gulp
+```
+
+#### Startup databases
+
+``` bash
 
 # start up elasticsearch
 ln -sfv /usr/local/opt/elasticsearch090/*.plist ~/Library/LaunchAgents
@@ -74,6 +94,12 @@ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch090.plist
 # start up redis
 ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+
+```
+
+#### Clone and setup RealScoutV2 app
+
+``` bash
 
 # Clone RealScoutV2
 cd ~/workspace
