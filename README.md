@@ -1,15 +1,14 @@
 ### New Mac Setup
 
-#### Install XCode 
-
-Install XCode via apple app store
-
-#### Install Java sdk and jre
-
-http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
-http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html
+#### Setup required before running soloist
 
 ``` bash
+# Install XCode
+
+# Install Java sdk and jre
+# http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+# http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html
+
 # Add an ssh deploy key for the workstation
 ssh-keygen -t rsa -C "rs-XXXX@realscout.com"
 ssh-add ~/.ssh/RealScoutV2_id_rsa
