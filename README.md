@@ -46,14 +46,6 @@ rbenv rehash
 bundle
 bundle exec soloist
 
-
-#### Setup rbenv
-
-``` bash
-echo 'eval "$(rbenv init -)"' > ~/.bash_profile
-source ~/.bash_profile
-```
-
 #### Install brew recipes with edits
 
 ``` bash
