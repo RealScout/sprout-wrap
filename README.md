@@ -104,7 +104,7 @@ bundle
 psql -c "create user realscout with superuser login password '123foo';"
 cp config/database.sample.yml config/database.yml
 
-# See ~/script/seed.sh for details on how to setup dev and test databases
+# See /RealScoutV2/script/seed.sh for details on how to setup dev and test databases
 
 ./script/omnispec.sh
 ```
