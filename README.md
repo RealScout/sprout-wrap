@@ -71,7 +71,7 @@ brew install node
 #### Install bower & gulp
 
 ``` bash
-npm install -g bower gulp
+npm install -g bower gulp@3.8.10
 ```
 
 #### Startup databases
