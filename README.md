@@ -104,13 +104,7 @@ bundle
 psql -c "create user realscout with superuser login password '123foo';"
 cp config/database.sample.yml config/database.yml
 
-rake db:create
-rake db:migrate
-rake populate:import_rs_att_mappings
-rake db:seed
-rake elastic_search:index_agents
-rake elastic_search:omniresults
-rake test:prepare
+# See ~/script/seed.sh for details on how to setup dev and test databases
 
 ./script/omnispec.sh
 ```
