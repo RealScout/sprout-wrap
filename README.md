@@ -62,8 +62,8 @@ brew uninstall phantomjs
 brew install phantomjs
 
 brew edit node
-#url "https://nodejs.org/dist/v0.10.36/node-v0.10.36.tar.gz"
-#sha256 "b9d7d1d0294bce46686b13a05da6fc5b1e7743b597544aa888e8e64a9f178c81"
+# replace entire contents of recipe with the contents of this url
+# https://github.com/Homebrew/homebrew/blob/19336e4d9c0d9b6441f6eceb72d3580b7caa7ab8/Library/Formula/node.rb
 brew uninstall node
 brew install node
 ```
