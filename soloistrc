@@ -85,6 +85,7 @@ node_attributes:
         - phantomjs
         - postgis
       casks:
+        - alfred
         - ccmenu
         - firefox
         - gitx-rowanj
@@ -94,5 +95,6 @@ node_attributes:
         - google-hangouts
         - hipchat
         - skype
+        - sublime-text
         - xquartz
         - xscope
