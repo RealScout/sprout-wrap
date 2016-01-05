@@ -1,4 +1,31 @@
-### New Mac Setup
+## Installation under El Capitan (OS X 10.11)
+
+### 1. Install Command Line Tools
+  
+    xcode-select --install
+
+If you receive a message about the update server being unavailable and are on Mavericks, then you already have the command line tools.
+
+
+### 2. Clone this project
+
+    git clone https://github.com/realscout/sprout-wrap.git
+    cd sprout-wrap
+
+### 3. Install soloist & and other required gems
+
+If you're running under rvm or rbenv, you shouldn't preface the following commands with `sudo`.
+
+    sudo gem install bundler
+    bundle
+
+### 4. Setup github ssh key
+
+Copy RealScoutTech's keys into `~/.ssh` OR
+Copy your key OR
+Generate a new key
+
+### New Mac Setup - DEPRECATED
 
 #### Setup required before running soloist
 
