@@ -58,9 +58,9 @@ node_attributes:
     terminal:
       default_profile: 'Pro'
     settings:
-      clock_format: EEE MMM d  h:mm:ss a
+      clock_format: EEE MMM d  h:mm a
     dock_preferences:
-      orientation: 'left'
+      orientation: 'bottom'
       auto_hide: true
       clear_apps: true
       tile_size: 35
@@ -84,6 +84,7 @@ node_attributes:
         - 'homebrew/versions/elasticsearch090'
         - phantomjs
         - postgis
+        - soloistrc
       casks:
         - alfred
         - ccmenu
