@@ -80,7 +80,7 @@ node_attributes:
           name: Sarah Lin
           username: sarah
       projects:
-        - name: RealScoutV2
+        -
           github: RealScout/RealScoutV2
     terminal:
       default_profile: 'Pro'
