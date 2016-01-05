@@ -6,55 +6,120 @@ recipes:
 - sprout-base::homebrew
 - sprout-homebrew
 
+# apps
+- sprout-osx-apps::iterm2
+- sprout-osx-apps::shiftit
+
 # settings
 - sprout-osx-settings
 - sprout-osx-settings::dock_preferences
-- sprout-terminal
-- sprout-terminal::update_font
-- sprout-ssh::known_hosts_github
+#- sprout-terminal
+#- sprout-ssh::known_hosts_github
 
 # development (general)
 - sprout-base::workspace_directory
-- sprout-git
-- sprout-git::default_editor
-- sprout-git::projects
-- sprout-git::git_scripts
+#- sprout-git
+#- sprout-git::default_editor
+#- sprout-git::projects
+#- sprout-git::git_scripts
 
 # development (rails)
 - sprout-rbenv
 - sprout-ruby
-- sprout-postgresql
-
-# apps
-- sprout-osx-apps::iterm2
-- sprout-osx-apps::flycut
-- sprout-osx-apps::shiftit
 
 # apps (editors)
-- sprout-osx-apps::macvim
-- sprout-osx-apps::sublime_text
-- sprout-rubymine
+- sprout-jetbrains-editors::rubymine
+- sprout-jetbrains-editors::pycharm
 
 node_attributes:
   sprout:
+    jetbrains-editors:
+      'preferences.repository': 'git@github.com:RealScout/pivotal_ide_prefs.git'
     git:
-      domain: pivotallabs.com
+      domain: realscout.com
+      prefix: pair
+      global_config:
+        'alias.st': !git status && echo  && echo ----- Pairing As ----- && git config user.name && echo ----------------------
+        'alias.di': diff
+        'alias.co': checkout
+        'alias.ci': commit
+        'alias.br': branch
+        'alias.sta': stash
+        'alias.llog': log --date=local
+        'alias.flog': log --pretty=fuller --decorate
+        'alias.lg': log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+        'alias.lol': log --graph --decorate --oneline
+        'alias.lola': log --graph --decorate --oneline --all
+        'alias.blog': log origin/master... --left-right
+        'alias.ds': diff --staged
+        'alias.fixup': commit --fixup
+        'alias.squash': commit --squash
+        'alias.unstage': reset HEAD
+        'alias.rum': rebase master@{u}
+        'core.pager': less -FXRS -x2
+        'core.excludesfile': /Users/winterfell/.gitignore_global
+        'apply.whitespace': nowarn
+        'color.branch': auto
+        'color.diff': auto
+        'color.interactive': auto
+        'color.status': auto
+        'color.ui': auto
+        'branch.autosetupmerge': true
+        'rebase.autosquash': true
+        'push.default': simple
+        'filter.hawser.clean': git hawser clean %f
+        'filter.hawser.smudge': git hawser smudge %f
+        'filter.hawser.required': true
+        'filter.lfs.clean': git lfs clean %f
+        'filter.lfs.smudge': git lfs smudge %f
+        'filter.lfs.required': true
       authors:
-        - initials: ah
-          name: Abhijit Hiremagalur
-          username: abhi
-        - initials: bc
-          name: Brian Cunnie
-          username: cunnie
-        - initials: jrhb
-          name: Jonathan Barnes
-        - initials: lw
-          name: Luke Winikates
-          username: lwinikates
+        - initials: dc
+          name: Davide Curletti
+          username: dcurletti
+        - initials: mp
+          name: Michael Parikh
+          username: MichaelAP
+        - initials: cc
+          name: Chris Conley
+          username: chrisconley
+        - initials: lc
+          name: Luis Castro
+          username: castrolem
+        - initials: sh
+          name: Shane Heath
+          username: shaneheath
+        - initials: nc
+          name: Nic Cavigliano
+          username: ncavig
+        - initials: blu
+          name: Nick Blumenthal
+          username: nickblumenthal
+        - initials: nb
+          name: Nick Blumenthal
+          username: nickblumenthal
+        - initials: gr
+          name: Gil Raphaelli
+          username: graphaelli
+        - initials: as
+          name: Anthony Sosso
+          username: sosso
+        - initials: sl
+          name: Sarah Lin
+          username: sarah
       projects:
         -
+          name: RealScoutV2
+          url: https://github.com/RealScout/RealScoutV2.git
+        -
           name: sprout-wrap
-          url: https://github.com/pivotal-sprout/sprout-wrap.git
+          url: https://github.com/RealScout/sprout-wrap.git
+        -
+          name: rs-styleguide
+          url: https://github.com/RealScout/rs-styleguide.git
+        -
+          name: rs-release-bot
+          url: https://github.com/RealScout/rs-release-bot.git
     terminal:
       default_profile: 'Pro'
     settings:
@@ -67,35 +132,13 @@ node_attributes:
       magnification: false
     homebrew:
       formulae:
-        - ctags-exuberant
-        - ag
-        - chromedriver
-        - imagemagick
         - node
-        # - pstree # Skip until download url is fixed: https://github.com/Homebrew/homebrew/pull/35135
-        - qt
-        - ssh-copy-id
-        - tmux
-        - tree
-        - watch
         - wget
-        - rbenv-binstubs
-        - rbenv-gem-rehash
-        - 'homebrew/versions/elasticsearch090'
-        - phantomjs
-        - postgis
-        - soloistrc
       casks:
-        - alfred
         - ccmenu
         - firefox
-        - gitx-rowanj
+        - flycut
         - github
         - google-chrome
-        - google-drive
-        - google-hangouts
-        - hipchat
-        - skype
-        - sublime-text
-        - xquartz
-        - xscope
+        - 1password
+        - slack
