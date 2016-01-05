@@ -19,6 +19,12 @@ If you're running under rvm or rbenv, you shouldn't preface the following comman
     sudo gem install bundler
     bundle
 
+### 4. Run soloist
+
+[The `caffeinate` command will keep your computer awake while installing; depending on your network connection, soloist can take from 10 minutes to 2 hours to complete.]
+
+    caffeinate bundle exec soloist
+
 ### 4. Setup github ssh key
 
 Copy RealScoutTech's keys into `~/.ssh` OR
