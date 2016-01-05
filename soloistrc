@@ -136,7 +136,7 @@ node_attributes:
         - wget
       casks:
         - ccmenu
-        - firefox
+        #- firefox
         - flycut
         - github
         - google-chrome
