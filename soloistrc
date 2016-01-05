@@ -81,7 +81,7 @@ node_attributes:
           username: sarah
       projects:
         -
-          github: RealScout/RealScoutV2
+          url: git@github.com:RealScout/RealScoutV2.git
           name: RealScoutV2
     terminal:
       default_profile: 'Pro'
