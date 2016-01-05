@@ -29,7 +29,7 @@ recipes:
 
 # apps (editors)
 - sprout-jetbrains-editors::rubymine
-- sprout-jetbrains-editors::pycharm
+#- sprout-jetbrains-editors::pycharm
 
 node_attributes:
   sprout:
