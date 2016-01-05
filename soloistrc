@@ -15,6 +15,7 @@ recipes:
 - sprout-osx-settings::dock_preferences
 - sprout-terminal
 - sprout-ssh::known_hosts_github
+- sprout-ssh::dot_ssh_config_github
 
 # development (general)
 - sprout-base::workspace_directory
