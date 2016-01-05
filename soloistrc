@@ -82,6 +82,7 @@ node_attributes:
       projects:
         -
           github: RealScout/RealScoutV2
+          name: RealScoutV2
     terminal:
       default_profile: 'Pro'
     settings:
