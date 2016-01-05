@@ -33,6 +33,10 @@ recipes:
 
 node_attributes:
   sprout:
+    rbenv:
+      rubies:
+        '2.0.0-p598': {}
+      default_ruby: '2.0.0-p598'
     jetbrains-editors:
       'preferences.repository': 'git@github.com:RealScout/pivotal_ide_prefs.git'
     git:
