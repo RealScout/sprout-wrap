@@ -60,7 +60,7 @@ node_attributes:
         'alias.squash': "commit --squash"
         'alias.unstage': "reset HEAD"
         'alias.rum': "rebase master@{u}"
-        'core.pager': ""less -FXRS -x2""
+        'core.pager': "less -FXRS -x2"
         'core.excludesfile': "/Users/winterfell/.gitignore_global"
         'apply.whitespace': "nowarn"
         'color.branch': "auto"
@@ -90,8 +90,8 @@ node_attributes:
         - initials: lc
           name: Luis Castro
           username: castrolem
-        - initials: sh
           name: Shane Heath
+        - initials: sh
           username: shaneheath
         - initials: nc
           name: Nic Cavigliano
