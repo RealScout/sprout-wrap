@@ -112,18 +112,8 @@ node_attributes:
           name: Sarah Lin
           username: sarah
       projects:
-        -
-          name: RealScoutV2
-          url: https://github.com/RealScout/RealScoutV2.git
-        -
-          name: sprout-wrap
-          url: https://github.com/RealScout/sprout-wrap.git
-        -
-          name: rs-styleguide
-          url: https://github.com/RealScout/rs-styleguide.git
-        -
-          name: rs-release-bot
-          url: https://github.com/RealScout/rs-release-bot.git
+        - name: RealScoutV2
+          github: RealScout/RealScoutV2
     terminal:
       default_profile: 'Pro'
     settings:
