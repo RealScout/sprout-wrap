@@ -43,40 +43,40 @@ node_attributes:
       domain: realscout.com
       prefix: pair
       global_config:
-        'alias.st': !git status && echo  && echo ----- Pairing As ----- && git config user.name && echo ----------------------
-        'alias.di': diff
-        'alias.co': checkout
-        'alias.ci': commit
-        'alias.br': branch
-        'alias.sta': stash
-        'alias.llog': log --date=local
-        'alias.flog': log --pretty=fuller --decorate
-        'alias.lg': log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-        'alias.lol': log --graph --decorate --oneline
-        'alias.lola': log --graph --decorate --oneline --all
-        'alias.blog': log origin/master... --left-right
-        'alias.ds': diff --staged
-        'alias.fixup': commit --fixup
-        'alias.squash': commit --squash
-        'alias.unstage': reset HEAD
-        'alias.rum': rebase master@{u}
-        'core.pager': less -FXRS -x2
-        'core.excludesfile': /Users/winterfell/.gitignore_global
-        'apply.whitespace': nowarn
-        'color.branch': auto
-        'color.diff': auto
-        'color.interactive': auto
-        'color.status': auto
-        'color.ui': auto
-        'branch.autosetupmerge': true
-        'rebase.autosquash': true
-        'push.default': simple
-        'filter.hawser.clean': git hawser clean %f
-        'filter.hawser.smudge': git hawser smudge %f
-        'filter.hawser.required': true
-        'filter.lfs.clean': git lfs clean %f
-        'filter.lfs.smudge': git lfs smudge %f
-        'filter.lfs.required': true
+        'alias.st': "!git status && echo  && echo ----- Pairing As ----- && git config user.name && echo ----------------------"
+        'alias.di': "diff"
+        'alias.co': "checkout"
+        'alias.ci': "commit"
+        'alias.br': "branch"
+        'alias.sta': "stash"
+        'alias.llog': "log --date=local"
+        'alias.flog': "log --pretty=fuller --decorate"
+        'alias.lg': "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+        'alias.lol': "log --graph --decorate --oneline"
+        'alias.lola': "log --graph --decorate --oneline --all"
+        'alias.blog': "log origin/master... --left-right"
+        'alias.ds': "diff --staged"
+        'alias.fixup': "commit --fixup"
+        'alias.squash': "commit --squash"
+        'alias.unstage': "reset HEAD"
+        'alias.rum': "rebase master@{u}"
+        'core.pager': ""less -FXRS -x2""
+        'core.excludesfile': "/Users/winterfell/.gitignore_global"
+        'apply.whitespace': "nowarn"
+        'color.branch': "auto"
+        'color.diff': "auto"
+        'color.interactive': "auto"
+        'color.status': "auto"
+        'color.ui': "auto"
+        'branch.autosetupmerge': "true"
+        'rebase.autosquash': "true"
+        'push.default': "simple"
+        'filter.hawser.clean': "git hawser clean %f"
+        'filter.hawser.smudge': "git hawser smudge %f"
+        'filter.hawser.required': "true"
+        'filter.lfs.clean': "git lfs clean %f"
+        'filter.lfs.smudge': "git lfs smudge %f"
+        'filter.lfs.required': "true"
       authors:
         - initials: dc
           name: Davide Curletti
