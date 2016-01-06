@@ -36,6 +36,15 @@ recipes:
 
 node_attributes:
   sprout:
+    bash_it:
+      enabled_plugins:
+        aliases:
+          - general
+          - git
+      # still would like
+      # alias cdr='cd ~/workspace/RealscoutV2'
+      #alias localip="ipconfig getifaddr en0"
+      #alias be="bundle exec"
     rbenv:
       rubies:
         '2.0.0-p598': {}
