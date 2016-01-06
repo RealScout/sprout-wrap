@@ -103,13 +103,13 @@ node_attributes:
         - docker-compose
         - docker-machine
       casks:
-        - ccmenu
-        - firefox
         - flycut
-        - github
+        - shiftit
         - google-chrome
+        - firefox
         - 1password
         - slack
+        - ccmenu
         - github-desktop
         - screenhero
         - virtualbox
