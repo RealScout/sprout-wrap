@@ -6,6 +6,17 @@
 
 If you receive a message about the update server being unavailable and are on Mavericks, then you already have the command line tools.
 
+### 4. Setup github ssh key
+
+```
+mkdir ~/.ssh
+```
+
+Then put the appropriate private key into `~/.ssh/id_github_current`
+
+* Copy RealScoutTech's key if using a pairing workstation OR
+* Copy an existing github key OR
+* [Generate a new key](https://help.github.com/articles/generating-ssh-keys/)
 
 ### 2. Clone this project
 
@@ -25,11 +36,7 @@ If you're running under rvm or rbenv, you shouldn't preface the following comman
 
     caffeinate bundle exec soloist
 
-### 4. Setup github ssh key
 
-Copy RealScoutTech's keys into `~/.ssh` OR
-Copy your key OR
-Generate a new key
 
 ### New Mac Setup - DEPRECATED
 
