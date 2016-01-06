@@ -110,5 +110,6 @@ node_attributes:
         - google-chrome
         - 1password
         - slack
+        - github-desktop
         - screenhero
         - virtualbox
