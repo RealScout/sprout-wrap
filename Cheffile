@@ -34,3 +34,6 @@ cookbook 'sprout-ssh',
 
 cookbook 'sprout-jetbrains-editors',
   :github => 'pivotal-sprout/sprout-jetbrains-editors'
+
+cookbook 'rs-osx-settings',
+  :path => './site-cookbooks/rs-osx-settings'
