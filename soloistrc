@@ -109,7 +109,7 @@ node_attributes:
         - firefox
         - 1password
         - slack
-        - ccmenu
+        #- ccmenu # need to install via mac app store
         - github-desktop
         - screenhero
         - virtualbox
