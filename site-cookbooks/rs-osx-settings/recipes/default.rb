@@ -11,3 +11,15 @@ osx_defaults "disable web auto spelling correct" do
   key 'WebAutomaticSpellingCorrectionEnabled'
   boolean false
 end
+
+osx_defaults "disable smart quotes" do
+  domain 'NSGlobalDomain'
+  key 'NSAutomaticQuoteSubstitutionEnabled'
+  boolean false
+end
+
+osx_defaults "disable smart dashes" do
+  domain 'NSGlobalDomain'
+  key 'NSAutomaticDashSubstitutionEnabled'
+  boolean false
+end
