@@ -54,13 +54,17 @@ Then run it again
 
 ### 6. Additional
 
-Add these to your `~/.bash_profile`
+#### Update `~/.bash_profile`
 
 ```
 alias cdr='cd ~/workspace/RealscoutV2'
 alias localip="ipconfig getifaddr en0"
 alias be="bundle exec"
 ```
+
+#### Install CCMenu
+
+From the App Store - login in with tech+apple@realscout.com
 
 ### New Mac Setup - DEPRECATED
 
