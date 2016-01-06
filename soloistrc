@@ -99,6 +99,9 @@ node_attributes:
       formulae:
         - node
         - wget
+        - docker
+        - docker-compose
+        - docker-machine
       casks:
         - ccmenu
         - firefox
@@ -107,3 +110,5 @@ node_attributes:
         - google-chrome
         - 1password
         - slack
+        - screenhero
+        - virtualbox
