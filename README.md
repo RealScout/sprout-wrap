@@ -18,6 +18,11 @@ Then put the appropriate private key into `~/.ssh/id_github_current`
 * Copy an existing github key OR
 * [Generate a new key](https://help.github.com/articles/generating-ssh-keys/)
 
+```
+chmod 0644 ~/.ssh
+chmod 0600 ~/.ssh/id_github_current
+```
+
 ### 2. Clone this project
 
     git clone https://github.com/realscout/sprout-wrap.git
@@ -36,6 +41,15 @@ If you're running under rvm or rbenv, you shouldn't preface the following comman
 
     caffeinate bundle exec soloist
 
+When it fails
+
+```
+sudo chown `whoami` /Library/Caches/Homebrew/Casks/
+```
+
+Then run it again
+
+    caffeinate bundle exec soloist
 
 
 ### New Mac Setup - DEPRECATED
