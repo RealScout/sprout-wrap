@@ -52,6 +52,16 @@ Then run it again
     caffeinate bundle exec soloist
 
 
+### 6. Additional
+
+Add these to your `~/.bash_profile`
+
+```
+alias cdr='cd ~/workspace/RealscoutV2'
+alias localip="ipconfig getifaddr en0"
+alias be="bundle exec"
+```
+
 ### New Mac Setup - DEPRECATED
 
 #### Setup required before running soloist
