@@ -48,15 +48,6 @@ GIT
       sprout-homebrew (>= 0.0.0)
 
 GIT
-  remote: https://github.com/pivotal-sprout/sprout-mysql
-  ref: master
-  sha: 7501fffff8a5c6e9237b295ab586595eeb2bb06e
-  specs:
-    sprout-mysql (0.1.0)
-      homebrew (>= 0.0.0)
-      sprout-base (>= 0.0.0)
-
-GIT
   remote: https://github.com/pivotal-sprout/sprout-osx-apps
   ref: master
   sha: 1407e20d95f5b859fdaddd03d30d578e3c061309
@@ -75,15 +66,6 @@ GIT
     sprout-osx-settings (0.1.0)
       homebrew (>= 0.0.0)
       osx (>= 0.0.0)
-      sprout-base (>= 0.0.0)
-
-GIT
-  remote: https://github.com/pivotal-sprout/sprout-postgresql
-  ref: master
-  sha: 4dda423c52414507123d084d3acee07f36d7ae94
-  specs:
-    sprout-postgresql (0.1.0)
-      homebrew (>= 1.5.4)
       sprout-base (>= 0.0.0)
 
 GIT
@@ -121,16 +103,32 @@ GIT
       osx (>= 0.0.0)
       sprout-base (>= 0.0.0)
 
+PATH
+  remote: ./site-cookbooks/rs-osx-settings
+  specs:
+    rs-osx-settings (0.1.0)
+      homebrew (>= 0.0.0)
+      osx (>= 0.0.0)
+      sprout-base (>= 0.0.0)
+
+PATH
+  remote: ./site-cookbooks/rs-sprout-homebrew
+  specs:
+    rs-sprout-homebrew (0.1.0)
+      homebrew (>= 0.0.0)
+      osx (>= 0.0.0)
+      sprout-base (>= 0.0.0)
+
 DEPENDENCIES
   osx (>= 0)
+  rs-osx-settings (>= 0)
+  rs-sprout-homebrew (>= 0)
   sprout-base (>= 0)
   sprout-git (>= 0)
   sprout-homebrew (>= 0)
   sprout-jetbrains-editors (>= 0)
-  sprout-mysql (>= 0)
   sprout-osx-apps (>= 0)
   sprout-osx-settings (>= 0)
-  sprout-postgresql (>= 0)
   sprout-rbenv (>= 0)
   sprout-ruby (>= 0)
   sprout-ssh (>= 0)
