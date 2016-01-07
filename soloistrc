@@ -74,6 +74,12 @@ node_attributes:
         - docker
         - docker-compose
         - docker-machine
+        - imagemagick
+        - libsass
+        - libxml2
+        - libxslt
+        - qt
+        - postgresql # only needed so pg gem will install correctly
       casks:
         - flycut
         - shiftit
