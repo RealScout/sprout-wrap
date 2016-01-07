@@ -42,10 +42,6 @@ node_attributes:
         aliases:
           - general
           - git
-      # still would like
-      # alias cdr='cd ~/workspace/RealscoutV2'
-      #alias localip="ipconfig getifaddr en0"
-      #alias be="bundle exec"
     rbenv:
       rubies:
         '2.0.0-p598': {}
@@ -57,40 +53,6 @@ node_attributes:
       prefix: pair
       base_aliases:
         - 'st "!git status && echo  && echo ----- Pairing As ----- && git config user.name && echo ----------------------"'
-      authors:
-        - initials: dc
-          name: Davide Curletti
-          username: dcurletti
-        - initials: mp
-          name: Michael Parikh
-          username: MichaelAP
-        - initials: cc
-          name: Chris Conley
-          username: chrisconley
-        - initials: lc
-          name: Luis Castro
-          username: castrolem
-          name: Shane Heath
-        - initials: sh
-          username: shaneheath
-        - initials: nc
-          name: Nic Cavigliano
-          username: ncavig
-        - initials: blu
-          name: Nick Blumenthal
-          username: nickblumenthal
-        - initials: nb
-          name: Nick Blumenthal
-          username: nickblumenthal
-        - initials: gr
-          name: Gil Raphaelli
-          username: graphaelli
-        - initials: as
-          name: Anthony Sosso
-          username: sosso
-        - initials: sl
-          name: Sarah Lin
-          username: sarah
       projects:
         -
           url: git@github.com:RealScout/RealScoutV2.git
