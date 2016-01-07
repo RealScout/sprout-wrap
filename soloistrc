@@ -69,7 +69,7 @@ node_attributes:
       magnification: false
     homebrew:
       formulae:
-        - node
+        - "https://raw.githubusercontent.com/RealScout/sprout-wrap/master/homebrew-formula/node.rb"
         - wget
         - docker
         - docker-compose
