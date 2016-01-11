@@ -6,36 +6,36 @@
 
 If you receive a message about the update server being unavailable and are on Mavericks, then you already have the command line tools.
 
-### 4. Setup github ssh key
+### 2. Setup github ssh key
 
 ```
 mkdir ~/.ssh
 ```
 
-Then put the appropriate private key into `~/.ssh/id_github_current`
+Then put the appropriate private key into `~/.ssh/id_github_current`. Right now, this must be named exactly as so for ssh config and cloning RealScout repos to work properly.
 
 * Copy RealScoutTech's key if using a pairing workstation OR
 * Copy an existing github key OR
 * [Generate a new key](https://help.github.com/articles/generating-ssh-keys/)
 
 ```
-chmod 0644 ~/.ssh
-chmod 0600 ~/.ssh/id_github_current
+sudo chmod 0644 ~/.ssh
+sudo chmod 0600 ~/.ssh/id_github_current
 ```
 
-### 2. Clone this project
+### 3. Clone this project
 
     git clone https://github.com/realscout/sprout-wrap.git
     cd sprout-wrap
 
-### 3. Install soloist & and other required gems
+### 4. Install soloist & and other required gems
 
 If you're running under rvm or rbenv, you shouldn't preface the following commands with `sudo`.
 
     sudo gem install bundler
     bundle
 
-### 4. Run soloist
+### 5. Run soloist
 
 [The `caffeinate` command will keep your computer awake while installing; depending on your network connection, soloist can take from 10 minutes to 2 hours to complete.]
 
