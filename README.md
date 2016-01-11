@@ -65,3 +65,9 @@ alias be="bundle exec"
 #### Install CCMenu
 
 From the App Store - login in with tech+apple@realscout.com
+
+
+## Look into
+
+* BetterTouchTool
+* BitBar (see #tech-news)
