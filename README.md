@@ -9,7 +9,7 @@ If you receive a message about the update server being unavailable and are on Ma
 ### 2. Setup github ssh key
 
 ```
-mkdir ~/.ssh
+mkdir -m 0744 ~/.ssh
 ```
 
 Then put the appropriate private key into `~/.ssh/id_github_current`. Right now, this must be named exactly as so for ssh config and cloning RealScout repos to work properly.
@@ -19,7 +19,6 @@ Then put the appropriate private key into `~/.ssh/id_github_current`. Right now,
 * [Generate a new key](https://help.github.com/articles/generating-ssh-keys/)
 
 ```
-sudo chmod 0644 ~/.ssh
 sudo chmod 0600 ~/.ssh/id_github_current
 ```
 
