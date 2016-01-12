@@ -64,6 +64,10 @@ alias localip="ipconfig getifaddr en0"
 alias be="bundle exec"
 ```
 
+### 7. Start a new terminal session
+
+It's very important to close out terminal and open a new session (preferably in iterm), so that your environment is setup correctly before configuring the RealScoutV2 app.
+
 #### Install CCMenu
 
 From the App Store - login in with tech+apple@realscout.com
