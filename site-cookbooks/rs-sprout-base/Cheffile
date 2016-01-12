@@ -1,3 +1,0 @@
-site 'http://community.opscode.com/api/v1'
-
-cookbook 'rs-sprout-homebrew', path: '.'
