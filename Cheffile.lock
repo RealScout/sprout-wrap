@@ -112,6 +112,14 @@ PATH
       sprout-base (>= 0.0.0)
 
 PATH
+  remote: ./site-cookbooks/rs-sprout-base
+  specs:
+    rs-sprout-base (0.1.0)
+      homebrew (>= 0.0.0)
+      osx (>= 0.0.0)
+      sprout-base (>= 0.0.0)
+
+PATH
   remote: ./site-cookbooks/rs-sprout-homebrew
   specs:
     rs-sprout-homebrew (0.1.0)
@@ -122,6 +130,7 @@ PATH
 DEPENDENCIES
   osx (>= 0)
   rs-osx-settings (>= 0)
+  rs-sprout-base (>= 0)
   rs-sprout-homebrew (>= 0)
   sprout-base (>= 0)
   sprout-git (>= 0)

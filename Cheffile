@@ -14,6 +14,9 @@ cookbook 'sprout-git',
 cookbook 'sprout-base',
   :github => 'pivotal-sprout/sprout-base'
 
+cookbook 'rs-sprout-base',
+  :path => './site-cookbooks/rs-sprout-base'
+
 cookbook 'sprout-osx-apps',
   :github => 'pivotal-sprout/sprout-osx-apps'
 
