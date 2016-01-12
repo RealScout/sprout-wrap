@@ -55,13 +55,6 @@ If it fails installing shiftit, just rerun it again
 
     caffeinate bundle exec soloist
 
-### Setup Ruby **!Important!**
-
-```
-verify shims is in path
-rbenv rehash
-```
-
 ### 6. Additional
 
 #### Update `~/.bash_profile`
