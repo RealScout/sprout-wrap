@@ -34,6 +34,12 @@ If you're running under rvm or rbenv, you shouldn't preface the following comman
     sudo gem install bundler
     bundle
 
+#### !!Important!!
+
+We need to remove the system bundler and its executables
+
+    sudo gem uninstall bundler # Answer 'y' when asked if you want to remove executables
+
 ### 5. Run soloist
 
 [The `caffeinate` command will keep your computer awake while installing; depending on your network connection, soloist can take from 10 minutes to 2 hours to complete.]
