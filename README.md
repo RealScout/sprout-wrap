@@ -20,6 +20,7 @@ Then put the appropriate private key into `~/.ssh/id_github_current`. Right now,
 
 ```
 sudo chmod 0600 ~/.ssh/id_github_current
+ssh-add ~/.ssh/id_github_current
 ```
 
 ### 3. Clone this project
@@ -34,11 +35,6 @@ If you're running under rvm or rbenv, you shouldn't preface the following comman
     sudo gem install bundler
     bundle
 
-#### !!Important!!
-
-We need to remove the system bundler and its executables
-
-    sudo gem uninstall bundler # Answer 'y' when asked if you want to remove executables
 
 ### 5. Run soloist
 
@@ -71,6 +67,12 @@ alias be="bundle exec"
 ```
 
 ### 7. Start a new terminal session
+
+#### !!Important!!
+
+We need to remove the system bundler and its executables before doing anything else
+
+    sudo gem uninstall bundler # Answer 'y' when asked if you want to remove executables
 
 It's very important to close out terminal and open a new session (preferably in iterm), so that your environment is setup correctly before configuring the RealScoutV2 app.
 
