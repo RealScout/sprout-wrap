@@ -3,9 +3,9 @@ recipes:
 # base (required by sprout)
 - sprout-base
 - sprout-base::bash_it
-- sprout-base::homebrew
-- sprout-homebrew
-- rs-sprout-homebrew
+- homebrew
+- homebrew::install_formulas
+- homebrew::install_casks
 
 # apps
 - sprout-osx-apps::iterm2
@@ -44,8 +44,8 @@ node_attributes:
           - git
     rbenv:
       rubies:
-        '2.0.0-p598': {}
-      default_ruby: '2.0.0-p598'
+        '2.2.4': {}
+      default_ruby: '2.2.4'
     jetbrains-editors:
       'preferences.repository': 'git@github.com:RealScout/pivotal_ide_prefs.git'
     git:
@@ -67,28 +67,26 @@ node_attributes:
       clear_apps: true
       tile_size: 35
       magnification: false
-    homebrew:
-      formulae:
-        - "https://raw.githubusercontent.com/RealScout/sprout-wrap/master/homebrew-formula/node.rb"
-        - wget
-        - docker
-        - docker-compose
-        - docker-machine
-        - imagemagick
-        - libsass
-        - libxml2
-        - libxslt
-        - qt
-        - postgresql # only needed so pg gem will install correctly
-        - python3 # for aws tools
-      casks:
-        - flycut
-        - shiftit
-        - google-chrome
-        - firefox
-        - 1password
-        - slack
-        #- ccmenu # need to install via mac app store
-        - github-desktop
-        - screenhero
-        - virtualbox
+  homebrew:
+    formulas:
+      - "https://raw.githubusercontent.com/RealScout/sprout-wrap/master/homebrew-formula/node.rb"
+      - wget
+      - docker
+      - docker-compose
+      - docker-machine
+      - imagemagick
+      - libsass
+      - libxml2
+      - libxslt
+      - qt
+      - postgresql # only needed so pg gem will install correctly
+      - python3 # for aws tools
+    casks:
+      - flycut
+      - google-chrome
+      - firefox
+      - 1password
+      - slack
+      - github-desktop
+      - screenhero
+      - virtualbox
