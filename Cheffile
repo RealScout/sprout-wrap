@@ -34,6 +34,3 @@ cookbook 'sprout-jetbrains-editors',
 
 cookbook 'rs-osx-settings',
   :path => './site-cookbooks/rs-osx-settings'
-
-cookbook 'homebrew',
-  :path => './site-cookbooks/homebrew'

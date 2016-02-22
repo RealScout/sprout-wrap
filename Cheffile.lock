@@ -7,6 +7,8 @@ SITE
       7-zip (>= 0.0.0)
     chef_handler (1.3.0)
     dmg (2.3.0)
+    homebrew (2.0.5)
+      build-essential (>= 2.1.2)
     windows (1.39.1)
       chef_handler (>= 0.0.0)
 
@@ -100,12 +102,6 @@ GIT
       sprout-base (>= 0.0.0)
 
 PATH
-  remote: ./site-cookbooks/homebrew
-  specs:
-    homebrew (2.0.5)
-      build-essential (>= 2.1.2)
-
-PATH
   remote: ./site-cookbooks/rs-osx-settings
   specs:
     rs-osx-settings (0.1.0)
@@ -114,7 +110,6 @@ PATH
       sprout-base (>= 0.0.0)
 
 DEPENDENCIES
-  homebrew (>= 0)
   osx (>= 0)
   rs-osx-settings (>= 0)
   sprout-base (>= 0)
