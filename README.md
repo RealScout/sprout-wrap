@@ -35,14 +35,20 @@ If you're running under rvm or rbenv, you shouldn't preface the following comman
     sudo gem install bundler
     ARCHFLAGS="-arch x86_64" bundle
 
-
 ### 5. Run soloist
 
 [The `caffeinate` command will keep your computer awake while installing; depending on your network connection, soloist can take from 10 minutes to 2 hours to complete.]
 
     caffeinate bundle exec soloist
 
-If it fails installing shiftit, just rerun it again
+If it fails installing ruby, just install manually
+
+```
+rbenv install 2.2.3 # needed because sprout-wrap will install this by default
+rbenv install 2.2.4
+```
+
+If it fails for anything else, just try rerunning it again
 
     caffeinate bundle exec soloist
 
