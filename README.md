@@ -33,22 +33,12 @@ ssh-add ~/.ssh/id_github_current
 If you're running under rvm or rbenv, you shouldn't preface the following commands with `sudo`.
 
     sudo gem install bundler
-    bundle
+    ARCHFLAGS="-arch x86_64" bundle
 
 
 ### 5. Run soloist
 
 [The `caffeinate` command will keep your computer awake while installing; depending on your network connection, soloist can take from 10 minutes to 2 hours to complete.]
-
-    caffeinate bundle exec soloist
-
-When it fails
-
-```
-sudo chown `whoami` /Library/Caches/Homebrew/Casks/
-```
-
-Then run it again
 
     caffeinate bundle exec soloist
 
@@ -85,3 +75,23 @@ From the App Store - login in with tech+apple@realscout.com
 
 * BetterTouchTool
 * BitBar (see #tech-news)
+
+## Keeping Sprout Wrap Up To Date
+
+#### Update Chef cookbooks
+
+```
+librarian-chef update
+```
+
+#### Update gems
+
+```
+git remote add upstream https://github.com/pivotal-sprout/sprout-wrap.git
+git fetch upstream
+git checkout -b pivotal-master upstream/master
+git checkout master
+git checkout pivotal-master -- Gemfile.lock
+ARCHFLAGS="-arch x86_64" bundle
+```
+
