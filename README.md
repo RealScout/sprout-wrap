@@ -64,11 +64,20 @@ alias be="bundle exec"
 
 ### 7. Start a new terminal session
 
-#### !!Important!!
+:collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: 
+
+#### :collision: !!Important!! :collision:
+
+:collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: :collision: 
 
 We need to remove the system bundler and its executables before doing anything else
 
     sudo gem uninstall bundler # Answer 'y' when asked if you want to remove executables
+
+If you get an warning message about `sudo` and `gem`
+    
+    unalias gem
+    sudo gem uninstall bundler
 
 It's very important to close out terminal and open a new session (preferably in iterm), so that your environment is setup correctly before configuring the RealScoutV2 app.
 
